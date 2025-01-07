@@ -8,10 +8,19 @@ function isLoggedIn() {
 
 function requireLogin() {
     if (!isLoggedIn()) {
-        header('Location: /index.php'); // Redirect to login page if not logged in
+        // Dynamically determine the base project URL
+        $baseUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'];
+        $projectDir = trim(dirname($_SERVER['PHP_SELF'], 2), "/"); // Go two levels up to the project root
+        $loginUrl = $projectDir ? "{$baseUrl}/{$projectDir}/index.php" : "{$baseUrl}/index.php";
+
+        // Redirect to login page if not logged in
+        header("Location: $loginUrl");
         exit;
     }
 }
+
+
+
 
 function isAdmin() {
     return isLoggedIn() && $_SESSION['user']['role'] === 'admin';

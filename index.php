@@ -43,12 +43,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </style>
 </head>
 <body class="text-white min-h-screen flex flex-col">
-    <?php include 'includes/navbar.php'; ?>
+    
     <div class="container mx-auto mt-10 flex-grow flex flex-col items-center justify-center px-4">
         <div class="bg-black bg-opacity-70 p-8 rounded-lg shadow-2xl backdrop-filter backdrop-blur-lg">
-            <h1 class="text-yellow-400 text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-8 animate-pulse">
-                ছাত্র ম্যানেজেন্ট সিস্টেমে স্বাগতম
-            </h1>
+            <h1 class="text-yellow-400 text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 animate-pulse">
+            Welcome to the <strong>Student Management System</strong>  
+        </h1>
             
             <?php if (!empty($error)): ?>
                 <div class="bg-red-500 bg-opacity-50 text-white p-3 rounded mb-4 text-center">
@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input type="hidden" name="role" value="<?= htmlspecialchars($_GET['role']) ?>">
                     
                     <div class="mb-4">
-                        <label for="username" class="block text-sm mb-2">Username</label>
+                        <label for="username" class="block text-sm mb-2">Username or email(student)</label>
                         <input type="text" id="username" name="username" 
                                class="w-full p-2 bg-gray-700 rounded border border-gray-600 focus:border-blue-500 focus:ring-1 focus:ring-blue-500" 
                                required>

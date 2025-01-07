@@ -2,8 +2,9 @@
 include '../includes/auth.php';
 requireLogin();
 
+
 if (!isAdmin()) {
-    header("Location: ../dashboard.php");
+    header("Location: index.php");
     exit();
 }
 

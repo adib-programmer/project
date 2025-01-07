@@ -1,5 +1,5 @@
 -- in users table 
--- password = 8-D 
+
 INSERT INTO users (username, password, role, first_name, last_name, contact_no, avatar)
 VALUES ('mas-sir', '$2y$10$yg9tpPVPz3677NZmMtx0t..fHtlJIyG3YMsOCmyJK93qnNOjH4ivi', 'admin', 'Admin', 'User', '1234567890', NULL);
 
