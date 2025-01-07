@@ -1,0 +1,8 @@
+need to fix
+1. view student in accept
+2. delete student
+3. description
+4. back to home error
+5. leave class
+6. Add last name 
+7. notifications
