@@ -40,9 +40,9 @@ if (!$class) {
                 Manage Dues
             </a>
             <a href="results.php?class_id=<?= $class['id'] ?>" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition">
-                Results
+                Results and Sheets
             </a>
-            <a href="group_messages.php?class_id=<?= $class['id'] ?>" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-lg transition">
+            <a href="messages.php?class_id=<?= $class['id'] ?>" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-lg transition">
                 Group Messages
             </a>
 

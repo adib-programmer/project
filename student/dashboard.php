@@ -1,6 +1,10 @@
 <?php
 require_once '../includes/auth.php';
 requireLogin();
+if ($_SESSION['user']['role'] !== 'student') {
+    header("Location: ../index.php");
+    exit;
+}
 
 include '../includes/header.php';
 include '../includes/db.php';
@@ -51,14 +55,18 @@ $pendingRequests = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </button>
                 </a>
 
-                <button class="text-white hover:text-purple-400 transition-colors duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                        class="w-8 h-8">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14V11a6 6 0 10-12 0v3c0 .386-.146.735-.405 1.005L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
-                        </path>
-                    </svg>
-                </button>
+                <a href="notifications.php">
+                    <button class="text-white hover:text-purple-400 transition-colors duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            class="w-8 h-8">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14V11a6 6 0 10-12 0v3c0 .386-.146.735-.405 1.005L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
+                            </path>
+                        </svg>
+                    </button>
+
+                </a>
+
 
 
 
@@ -80,16 +88,7 @@ $pendingRequests = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 Join Class
             </span>
         </a>
-        <a href="messages.php"
-            class="group bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
-            <span class="flex items-center">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                </svg>
-                Personal Messages
-            </span>
-        </a>
+
         <a href="change_password.php"
             class="group bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
             <span class="flex items-center">
@@ -127,13 +126,13 @@ $pendingRequests = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 text-center text-sm">
                                 Submit Due
                             </a>
-                            <a href="group_messages.php?class_id=<?= $class['id'] ?>"
+                            <a href="messages.php?class_id=<?= $class['id'] ?>"
                                 class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 text-center text-sm">
                                 Group Chat
                             </a>
                             <a href="view_results.php?class_id=<?= $class['id'] ?>"
                                 class="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 text-center text-sm">
-                                Results
+                                Results and Sheets
                             </a>
                             <a href="view_students.php?class_id=<?= $class['id'] ?>"
                                 class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 text-center text-sm">
@@ -171,7 +170,8 @@ $pendingRequests = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <div>
                                 <p class="text-white font-bold"><?= htmlspecialchars($request['name']) ?></p>
                                 <p class="text-gray-300 text-sm">
-                                    <?= htmlspecialchars($request['description'] ?: 'No description available.') ?></p>
+                                    <?= htmlspecialchars($request['description'] ?: 'No description available.') ?>
+                                </p>
                             </div>
                             <span class="px-3 py-1 bg-yellow-500/20 text-yellow-300 rounded-full text-sm">Pending</span>
                         </div>

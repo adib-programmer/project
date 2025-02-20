@@ -1,8 +1,10 @@
 need to fix
-1. view student in accept
+1. view student in accept (done ✔)
 2. delete student
 3. description
 4. back to home error
-5. leave class
+5. leave class 
 6. Add last name 
 7. notifications
+8. If no admin goes to ../index.php
+9. 

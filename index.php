@@ -104,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <footer class="bg-black bg-opacity-70 text-white text-center p-6 mt-10 shadow-inner">
         <p class="text-sm">&copy; 2024 Student Management System</p>
         <p class="text-xl text-yellow-500 mt-2">
-            <a href="https://github.com/adib-programmar/" class="hover:text-yellow-400 transition duration-300">
+            <a href="https://github.com/adib-programmer/" class="hover:text-yellow-400 transition duration-300">
                 <i class="fab fa-github mr-1"></i>
             </a>
         </p>

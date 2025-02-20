@@ -4,7 +4,7 @@ requireLogin();
 
 
 if (!isAdmin()) {
-    header("Location: index.php");
+    header("Location: ../index.php");
     exit();
 }
 
@@ -55,25 +55,15 @@ include '../includes/header.php';
                 </div>
             </div>
 
-            <!-- Messaging -->
-            <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition duration-300">
-                <div class="p-6">
-                    <div class="flex items-center justify-center w-16 h-16 bg-purple-500 rounded-full mb-4">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 8h10M7 12h5m-5 4h10"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-semibold text-white mb-2">Messages</h3>
-                    <a href="messages.php" class="inline-block bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:-translate-y-1">Manage Messages</a>
-                </div>
-            </div>
 
-            <!-- Reset Passwords -->
+           
             <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition duration-300">
                 <div class="p-6">
                     <div class="flex items-center justify-center w-16 h-16 bg-red-500 rounded-full mb-4">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path></svg>
                     </div>
                     <h3 class="text-2xl font-semibold text-white mb-2">Change Password</h3>
-                    <a href="reset_password.php" class="inline-block bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:-translate-y-1">Reset Passwords</a>
+                    <a href="change_password.php" class="inline-block bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:-translate-y-1">Chnage Password</a>
                 </div>
             </div>
         </div>
