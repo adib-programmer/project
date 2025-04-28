@@ -3,12 +3,12 @@ need to fix
 2. delete student (✔️✅)
 3. description (dont need)
 4. back to home error 
-5. messaging system corrections 
+5. messaging system corrections . here students account messages loop. need to fix
 6. Add last name (Don't need this )
 7. notifications
 8. If no admin goes to ../index.php  
-9. fix the notifications
-10. add a forget password
+9. fix the notifications. here no leatest messages is showing and reoading for many long or retap to notificatiobns.
+10. add a forget password system with firebase otp system and there will be detetct and match phone number from db and then send otp and then can change pass
 
 
 
