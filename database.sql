@@ -1,6 +1,6 @@
-CREATE DATABASE school_management;
+CREATE DATABASE management;
 
-USE school_management;
+USE management;
 
 -- Users table
 CREATE TABLE users (

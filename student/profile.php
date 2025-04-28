@@ -16,9 +16,9 @@ if (!$userId) {
 // Database connection
 try {
     $pdo = new PDO(
-        "mysql:host=localhost;dbname=school_management;charset=utf8mb4",
-        "root", // Replace with your database username
-        "",     // Replace with your database password
+        "mysql:host=localhost;dbname=management;charset=utf8mb4",
+        "root", 
+        "",     
         [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC

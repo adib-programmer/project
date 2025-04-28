@@ -194,7 +194,7 @@ $pendingAssignments = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center space-x-8">
-                    <a href="../dashboard.php" class="text-gray-800 hover:text-blue-500">
+                    <a href="dashboard.php" class="text-gray-800 hover:text-blue-500">
                         <i class="fas fa-arrow-left mr-2"></i>Back to Dashboard
                     </a>
                 </div>
@@ -216,58 +216,7 @@ $pendingAssignments = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <!-- Messages Section -->
-            <div class="lg:col-span-2">
-                <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
-                    <h2 class="text-2xl font-bold mb-6 text-gray-800">
-                        <i class="fas fa-envelope text-blue-500 mr-2"></i>Recent Messages
-                        <?php if ($unreadCount > 0): ?>
-                            <span class="text-sm bg-blue-500 text-white rounded-full px-2 py-1 ml-2">
-                                <?= $unreadCount ?>
-                            </span>
-                        <?php endif; ?>
-                    </h2>
-                    
-                    <div id="messages-container" class="space-y-4">
-                        <?php foreach ($recentMessages as $message): ?>
-                            <div class="message-card animate__animated animate__fadeIn bg-gradient-to-r 
-                                <?= $message['is_read'] ? 'from-gray-50 to-white' : 'from-blue-50 to-blue-100' ?> 
-                                p-6 rounded-lg shadow-md" data-id="<?= htmlspecialchars($message['id']) ?>">
-                                <div class="flex items-start justify-between">
-                                    <div class="flex items-center space-x-4">
-                                        <div class="flex-shrink-0">
-                                            <img src="<?= $message['sender_avatar'] ?? 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png' ?>" 
-                                                 alt="<?= htmlspecialchars($message['sender_name']) ?>" 
-                                                 class="w-10 h-10 rounded-full">
-                                        </div>
-                                        <div>
-                                            <h3 class="font-semibold text-gray-800"><?= htmlspecialchars($message['sender_name']) ?></h3>
-                                            <p class="text-sm text-gray-500">
-                                                <?= $message['class_name'] ? htmlspecialchars("in {$message['class_name']}") : 'Direct message' ?>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <?php if (!$message['is_read']): ?>
-                                    <div class="flex items-center space-x-2">
-                                        <span class="unread-indicator text-blue-500">
-                                            <i class="fas fa-circle text-xs"></i>
-                                        </span>
-                                        <button class="mark-read-btn text-blue-500 hover:text-blue-700">
-                                            <i class="fas fa-check"></i>
-                                        </button>
-                                    </div>
-                                    <?php endif; ?>
-                                </div>
-                                <div class="mt-4">
-                                    <p class="text-gray-700"><?= nl2br(htmlspecialchars($message['message'])) ?></p>
-                                </div>
-                                <div class="mt-4 flex justify-between items-center text-sm text-gray-500">
-                                    <span><?= $message['minutes_ago'] ?> minutes ago</span>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-            </div>
+            
 
             <!-- Assignments Section -->
             <div class="lg:col-span-1">

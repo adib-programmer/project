@@ -13,7 +13,7 @@ $successMessage = '';
 $due_id = $_GET['due_id'] ?? null;
 
 if (!$due_id) {
-    header("Location: ../dashboard.php");
+    header("Location: dashboard.php");
     exit;
 }
 
@@ -51,7 +51,7 @@ if (isset($_GET['export'])) {
     $stmtDue->execute(['due_id' => $due_id]);
     $dueInfo = $stmtDue->fetch(PDO::FETCH_ASSOC);
 
-    // Create CSV
+    
     header('Content-Type: text/csv');
     header('Content-Disposition: attachment; filename="submissions_' . date('Y-m-d') . '.csv"');
 
